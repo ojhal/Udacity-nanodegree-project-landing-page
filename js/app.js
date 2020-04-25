@@ -17,8 +17,6 @@
  * Define Global Variables
  * 
 */
-const navigation = document.getElementById('navbar__list');
-const sections = document.querySelectorAll('section');
 
 
 /**
@@ -36,12 +34,7 @@ const sections = document.querySelectorAll('section');
 */
 
 // build the nav
-const navBuild = () => {
-
-
-
-}
-
+s
 
 // Add class 'active' to section when near top of viewport
 
