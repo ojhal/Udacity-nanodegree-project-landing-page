@@ -65,18 +65,19 @@ section {
 
 /* Navigation Styles*/
 .navbar__menu ul {
+    padding: 2%;
     padding-left: 0;
     margin: 0;
-    text-align: right;
+    text-align: center;
 }
 
 .navbar__menu li {
-    display: inline-block;
+    display: inline-flex;
+    padding-left: 2%;
 }
 
 .navbar__menu .menu__link {
-    display: block;
-    padding: 1em;
+    display: inline-block;
     font-weight: bold;
     text-decoration: none;
     color: #000;
@@ -84,13 +85,13 @@ section {
 
 .navbar__menu .menu__link:hover {
     background: #333;
-    color: #fff;
+    color:blue;
     transition: ease 0.3s all;
 }
 
 /* Header Styles */
 .page__header {
-    background: #fff;
+    background:red;
     position: fixed;
     top: 0;
     width: 100%;

@@ -27,7 +27,11 @@ const sections = document.querySelectorAll('section')
  * 
 */
 
-
+//check which element is active
+function getActiveEle() {
+    window.scrollBy(0,-100);
+}
+document.getElementById("navbar__list").addEventListener("click",getActiveEle); 
 
 /**
  * End Helper Functions
@@ -44,13 +48,39 @@ function addSections() {
         section.innerText = item.dataset.nav;
         navbar.appendChild(section);
     };
-};  
+};
 
 // Add class 'active' to section when near top of viewport
-
-
+function setActive () {
+    window.addEventListener('scroll', function (event) {
+        let section = getActiveEle();
+        section.classList.add('your-active-class');
+        
+        for (let item of sections) {
+            if (item.id != section.id & item.classList.contains('your-active-class')) {
+                item.classList.remove('your-active-class');
+            }
+        }
+    
+        const active = document.querySelector('li[data-nav="' + section.id + '"]');
+        active.classList.add('active__link');
+        // remove from other headers
+        const headers = document.querySelectorAll('.menu__link');
+        for (let item of headers) {
+            console.log(item);
+            if (item.dataset.nav != active.dataset.nav & item.classList.contains('active__link')) {
+                item.classList.remove('active__link');
+            }
+        };
+    });
+};
 // Scroll to anchor ID using scrollTO event
-
+function scrollWin() {
+    navbar.addEventListener('click', function (event) {
+        const clicked = document.querySelector('#' + event.target.dataset.nav)
+        clicked.scrollIntoView();
+    });
+};
 
 /**
  * End Main Functions
@@ -59,9 +89,9 @@ function addSections() {
 */
 
 // Build menu 
-
+addSections();
 // Scroll to section on link click
-
+scrollWin();
 // Set sections as active
-
+setActive();
 
