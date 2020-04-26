@@ -29,10 +29,10 @@ const sections = document.querySelectorAll('section')
 
 //check which element is active
 function getActiveEle() {
-    window.scrollBy(0,-100);
+    window.scrollBy(0, -300);
 }
-document.getElementById("navbar__list").addEventListener("click",getActiveEle); 
-
+document.getElementById("navbar__list").addEventListener("click", getActiveEle);
+getActiveEle();
 /**
  * End Helper Functions
  * Begin Main Functions
@@ -51,17 +51,9 @@ function addSections() {
 };
 
 // Add class 'active' to section when near top of viewport
-function setActive () {
+function setActive() {
     window.addEventListener('scroll', function (event) {
-        let section = getActiveEle();
-        section.classList.add('your-active-class');
         
-        for (let item of sections) {
-            if (item.id != section.id & item.classList.contains('your-active-class')) {
-                item.classList.remove('your-active-class');
-            }
-        }
-    
         const active = document.querySelector('li[data-nav="' + section.id + '"]');
         active.classList.add('active__link');
         // remove from other headers
