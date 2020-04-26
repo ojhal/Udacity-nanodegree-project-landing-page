@@ -49,7 +49,6 @@ function addSections() {
         navbar.appendChild(section);
     };
 };
-
 // Add class 'active' to section when near top of viewport
 function setActive() {
     window.addEventListener('scroll', function (event) {
@@ -73,7 +72,7 @@ function scrollWin() {
         clicked.scrollIntoView();
     });
 };
-
+console.log(scrollWin);
 /**
  * End Main Functions
  * Begin Events
